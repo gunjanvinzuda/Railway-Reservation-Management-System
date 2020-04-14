@@ -21,7 +21,7 @@ submit.addEventListener("click",function()
 			{
 				if(str.match(pass))
 				{
-					location.replace("home.html");
+// 					location.replace("home.html");
 				}
 				else
 				{
