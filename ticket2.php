@@ -9,6 +9,7 @@ if(isset($_POST['change'])) {
 		$connect = mysqli_connect("localhost","root") or die("Couldn't connect");
 		mysqli_select_db($connect,"railway-reservation") or die("Couldn't find database");
 		$query = mysqli_query($connect,"UPDATE ticket SET source='$source' WHERE trainnumber='$trainno'");
+		$q = mysqli_query($connect,"UPDATE train SET source='$source' WHERE trainnumber='$trainno'");
 	}
 	if($_POST['destination']) {
 		$destination = $_POST['destination'];
@@ -16,6 +17,8 @@ if(isset($_POST['change'])) {
 		$connect = mysqli_connect("localhost","root") or die("Couldn't connect");
 		mysqli_select_db($connect,"railway-reservation") or die("Couldn't find database");
 		$query = mysqli_query($connect,"UPDATE ticket SET destination='$destination' WHERE trainnumber='$trainno'");
+		$q = mysqli_query($connect,"UPDATE train SET destination='$destination' WHERE trainnumber='$trainno'");
+		
 	}
 	if($_POST['class']) {
 		$class = $_POST['class'];
@@ -23,6 +26,8 @@ if(isset($_POST['change'])) {
 		$connect = mysqli_connect("localhost","root") or die("Couldn't connect");
 		mysqli_select_db($connect,"railway-reservation") or die("Couldn't find database");
 		$query = mysqli_query($connect,"UPDATE ticket SET class='$class' WHERE trainnumber='$trainno'");
+		$q = mysqli_query($connect,"UPDATE class SET class='$class' WHERE trainnumber='$trainno'");
+
 	}
 }
 
@@ -45,7 +50,7 @@ if(isset($_POST['change'])) {
 	    <li class="breadcrumb-item active" aria-current="page">Ticket Update</li>
 	  </ol>
 	</nav>
-	<form action="ticket.php" method="POST">
+	<form action="ticket2.php" method="POST">
 		<div ng-app ng-init="source=true; destination=true; class=true;" class='box'>
 			Update Source : <input type='checkbox' ng-model='source'><br>
 			<p ng-if='source'>Enter New Source : <input type='text' name='source' placeholder='New Source'></p>
