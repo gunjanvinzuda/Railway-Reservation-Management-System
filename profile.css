@@ -27,12 +27,13 @@ button {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+  text-decoration: none;
 }
 
 a {
   text-decoration: none;
   font-size: 22px;
-  color: black;
+  color: white;
 }
 
 button:hover, a:hover {
@@ -40,28 +41,28 @@ button:hover, a:hover {
 }
 
 .train {
-	float: left;
-	border-bottom: 1px solid #847f7f;
+  border-bottom: 1px solid #847f7f;
 }
 
 .details {
-	margin: 10px 0;
+	margin: 30px 60px;
 	font-size: 15px;
   float: left;
+  text-decoration: none;
 }
 
 th {
 	padding-right: 50px;
 }
 
-.btn {
+.btn a {
 	border: none;
   	outline: 0;
   	padding: 8px;
   	margin: 50px 320px;
   	color: white;
   	display: inline-block;
-  	background-color: #000;
+  	background-color: #ffffff;
   	text-align: center;
   	cursor: pointer;
   	width: 200px;
